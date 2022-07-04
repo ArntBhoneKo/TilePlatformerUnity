@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 872962228}
   - component: {fileID: 5604638398343436822}
   - component: {fileID: 7184912178174789030}
-  m_Layer: 0
+  - component: {fileID: 1665981229546603863}
+  m_Layer: 8
   m_Name: Jim(Player)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +125,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 8
+  m_GravityScale: 6
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -139,12 +140,12 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 8410475907637049979}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c55c7acf0e3a3664086304ced61f8b90, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0321126, y: -0.08133209}
-  m_Size: {x: 0.4406786, y: 0.8644464}
+  m_Offset: {x: -0.032113075, y: -0.07375175}
+  m_Size: {x: 0.5643959, y: 0.8492857}
   m_Direction: 0
 --- !u!114 &5604638398343436822
 MonoBehaviour:
@@ -188,6 +189,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f76c42da56b11ea4b98c02b76efddd49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 10
-  jumpSpeed: 25
+  runSpeed: 7
+  jumpSpeed: 20
   climbSpeed: 5
+--- !u!61 &1665981229546603863
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8410475907637049979}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.06064272, y: -0.45734525}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.38346958, y: 0.075202465}
+  m_EdgeRadius: 0

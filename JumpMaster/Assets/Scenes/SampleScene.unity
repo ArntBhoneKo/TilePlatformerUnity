@@ -24987,14 +24987,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 872962228, guid: d2ee307d4d0e3f145b0f51db2ec5977a, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: c55c7acf0e3a3664086304ced61f8b90, type: 2}
-    - target: {fileID: 7184912178174789030, guid: d2ee307d4d0e3f145b0f51db2ec5977a, type: 3}
-      propertyPath: runSpeed
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 8410475907637049976, guid: d2ee307d4d0e3f145b0f51db2ec5977a, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -25042,10 +25034,6 @@ PrefabInstance:
     - target: {fileID: 8410475907637049979, guid: d2ee307d4d0e3f145b0f51db2ec5977a, type: 3}
       propertyPath: m_Name
       value: Jim(Player)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8410475907637049979, guid: d2ee307d4d0e3f145b0f51db2ec5977a, type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2ee307d4d0e3f145b0f51db2ec5977a, type: 3}
