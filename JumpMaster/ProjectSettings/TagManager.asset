@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -17,9 +18,9 @@ TagManager:
   - Background
   - Bouncing
   - Enemies
-  - 
-  - 
-  - 
+  - Hazards
+  - Bullets
+  - Interactables
   - 
   - 
   - 
@@ -52,6 +53,12 @@ TagManager:
     locked: 0
   - name: Climbing
     uniqueID: 3064322703
+    locked: 0
+  - name: Hazards
+    uniqueID: 100175387
+    locked: 0
+  - name: Interactables
+    uniqueID: 3131800741
     locked: 0
   - name: Enemys
     uniqueID: 2544635783
