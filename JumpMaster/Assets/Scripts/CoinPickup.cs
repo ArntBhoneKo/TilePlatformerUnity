@@ -8,7 +8,7 @@ public class CoinPickup : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            AudioSource.PlayClipAtPoint(FindObjectOfType<AudioManager>().coinPickupSFX, Camera.main.transform.position);
+            FindObjectOfType<AudioManager>().CoinPickupAudio();
             Destroy(gameObject);
         }
     }

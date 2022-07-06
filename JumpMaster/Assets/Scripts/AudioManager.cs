@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] public AudioClip playerDeathSFX;
     [SerializeField] public AudioClip enemyDeathSFX;
     [SerializeField] public AudioClip winSFX;
+    [SerializeField] public AudioClip jumpSFX;
 
     void Awake()
     {
@@ -21,5 +22,35 @@ public class AudioManager : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
         }
+    }
+
+    public void CoinPickupAudio() 
+    {
+        AudioSource.PlayClipAtPoint(coinPickupSFX, Camera.main.transform.position);
+    }
+
+    public void GunShotAudio() 
+    {
+        AudioSource.PlayClipAtPoint(gunShotSFX, Camera.main.transform.position);
+    }
+
+    public void PlayerDeathAudio() 
+    {
+        AudioSource.PlayClipAtPoint(playerDeathSFX, Camera.main.transform.position);
+    }
+
+    public void EnemyDeathAudio() 
+    {
+        AudioSource.PlayClipAtPoint(enemyDeathSFX, Camera.main.transform.position);
+    }
+
+    public void WinAudio() 
+    {
+        AudioSource.PlayClipAtPoint(winSFX, Camera.main.transform.position);
+    }
+
+    public void JumpAudio() 
+    {
+        AudioSource.PlayClipAtPoint(jumpSFX, Camera.main.transform.position);
     }
 }

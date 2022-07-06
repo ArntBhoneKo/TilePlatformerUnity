@@ -27,6 +27,7 @@ public class Bullet : MonoBehaviour
         if (other.tag == "Enemy")
         {
             Destroy(other.gameObject);
+            FindObjectOfType<AudioManager>().EnemyDeathAudio();
         }
         Destroy(gameObject);
     }

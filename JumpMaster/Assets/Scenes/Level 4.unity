@@ -13235,7 +13235,7 @@ GameObject:
   - component: {fileID: 861610472}
   m_Layer: 10
   m_Name: Bouncing Tilemap
-  m_TagString: Untagged
+  m_TagString: Bounce
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14923,7 +14923,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5339062447361224772, guid: f20f1a699168cc546a1ad1b67ac7a2f5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.127426
+      value: -13.124563
       objectReference: {fileID: 0}
     - target: {fileID: 5339062447361224772, guid: f20f1a699168cc546a1ad1b67ac7a2f5, type: 3}
       propertyPath: m_LocalPosition.y

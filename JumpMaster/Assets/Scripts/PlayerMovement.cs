@@ -42,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(!isAlive) { return; }
         Instantiate(bullet, gun.position, gun.rotation);
+        FindObjectOfType<AudioManager>().GunShotAudio();
         
     }
 
@@ -60,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(value.isPressed)
         {
+            FindObjectOfType<AudioManager>().JumpAudio();
             myRigidbody.velocity += new Vector2 (0f, jumpSpeed);
         }
     }
@@ -109,7 +111,16 @@ public class PlayerMovement : MonoBehaviour
             isAlive = false;
             myAnimator.SetTrigger("Dying");
             myRigidbody.velocity = deathKick;
+            FindObjectOfType<AudioManager>().PlayerDeathAudio();
             FindObjectOfType<GameSession>().ProcessPlayerDeath();
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D other) 
+    {
+        if (other.gameObject.tag == "Bounce")
+        {
+            FindObjectOfType<AudioManager>().JumpAudio();
         }
     }
 

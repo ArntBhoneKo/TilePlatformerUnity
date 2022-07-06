@@ -11,6 +11,7 @@ public class LevelExit : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            FindObjectOfType<AudioManager>().WinAudio();
             StartCoroutine(LoadNextLevel());
         }
     }
