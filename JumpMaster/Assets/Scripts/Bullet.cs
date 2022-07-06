@@ -33,7 +33,8 @@ public class Bullet : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D other) 
-    {
+    {   
+        FindObjectOfType<GameSession>().AddToCoin(FindObjectOfType<EnemyMovement>().enemyValue);
         Destroy(gameObject);
     }
 }

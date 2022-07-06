@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] public AudioClip enemyDeathSFX;
     [SerializeField] public AudioClip winSFX;
     [SerializeField] public AudioClip jumpSFX;
+    [SerializeField] public AudioClip clickSFX;
 
     void Awake()
     {
@@ -52,5 +53,10 @@ public class AudioManager : MonoBehaviour
     public void JumpAudio() 
     {
         AudioSource.PlayClipAtPoint(jumpSFX, Camera.main.transform.position);
+    }
+
+    public void ClickAudio() 
+    {
+        AudioSource.PlayClipAtPoint(clickSFX, new Vector3(-13,-9,-1));
     }
 }
