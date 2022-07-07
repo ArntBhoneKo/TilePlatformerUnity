@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
@@ -11,7 +12,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] public AudioClip winSFX;
     [SerializeField] public AudioClip jumpSFX;
     [SerializeField] public AudioClip clickSFX;
-
+    [SerializeField] AudioSource sfxSource;
+    public AudioMixer mainMixer;
     void Awake()
     {
         int numAudioManager = FindObjectsOfType<AudioManager>().Length;
@@ -25,38 +27,56 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    void Start() 
+    {
+        if (PlayerPrefs.HasKey("MasterVol"))
+        {
+            mainMixer.SetFloat("MasterVol", PlayerPrefs.GetFloat("MasterVol"));
+        }  
+
+        if (PlayerPrefs.HasKey("BGVol"))
+        {
+            mainMixer.SetFloat("BGVol", PlayerPrefs.GetFloat("BGVol"));
+        }  
+
+        if (PlayerPrefs.HasKey("SFXVol"))
+        {
+            mainMixer.SetFloat("SFXVol", PlayerPrefs.GetFloat("SFXVol"));
+        }  
+    }
+
     public void CoinPickupAudio() 
     {
-        AudioSource.PlayClipAtPoint(coinPickupSFX, Camera.main.transform.position);
+        sfxSource.PlayOneShot(coinPickupSFX, 1f);
     }
 
     public void GunShotAudio() 
     {
-        AudioSource.PlayClipAtPoint(gunShotSFX, Camera.main.transform.position);
+        sfxSource.PlayOneShot(gunShotSFX, 1f);
     }
 
     public void PlayerDeathAudio() 
     {
-        AudioSource.PlayClipAtPoint(playerDeathSFX, Camera.main.transform.position);
+        sfxSource.PlayOneShot(playerDeathSFX, 1f);
     }
 
     public void EnemyDeathAudio() 
     {
-        AudioSource.PlayClipAtPoint(enemyDeathSFX, Camera.main.transform.position);
+        sfxSource.PlayOneShot(enemyDeathSFX, 1f);
     }
 
     public void WinAudio() 
     {
-        AudioSource.PlayClipAtPoint(winSFX, Camera.main.transform.position);
+        sfxSource.PlayOneShot(winSFX, 1f);
     }
 
     public void JumpAudio() 
     {
-        AudioSource.PlayClipAtPoint(jumpSFX, Camera.main.transform.position);
+        sfxSource.PlayOneShot(jumpSFX, 1f);
     }
 
     public void ClickAudio() 
     {
-        AudioSource.PlayClipAtPoint(clickSFX, new Vector3(-13,-9,-1));
+        sfxSource.PlayOneShot(clickSFX, 1f);
     }
 }

@@ -9,13 +9,31 @@ public class MainMenu : MonoBehaviour
     public GameObject realMenu;
     public GameObject levelsMenu;
     public GameObject controlsMenu;
+    public GameObject winMenu;
+    public GameObject loseMenu;
     [SerializeField] float loadDelay = 1f;
+
+    void Awake()
+    {
+        int numMainMenus = FindObjectsOfType<MainMenu>().Length;
+        if (numMainMenus > 1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+    }
 
     private void Start() 
     {
+        FindObjectOfType<GameSession>().mainCanvas.SetActive(false);
         optionsMenu.SetActive(false);
         levelsMenu.SetActive(false);
         controlsMenu.SetActive(false);
+        winMenu.SetActive(false);
+        loseMenu.SetActive(false);
         realMenu.SetActive(true);
     }
 
@@ -47,18 +65,24 @@ public class MainMenu : MonoBehaviour
         realMenu.SetActive(true);
     }
 
-    public void OpenControlsMenu()
+    public void OpenLoseMenu()
     {
-        FindObjectOfType<AudioManager>().ClickAudio();
-        realMenu.SetActive(false);
-        controlsMenu.SetActive(true);
+        loseMenu.SetActive(true);
     }
 
-    public void CloseControlsMenu()
+    public void CloseLoseMenu()
     {
-        FindObjectOfType<AudioManager>().ClickAudio();
-        controlsMenu.SetActive(false);
-        realMenu.SetActive(true);
+        loseMenu.SetActive(false);
+    }
+
+    public void OpenWinMenu()
+    {
+        winMenu.SetActive(true);
+    }
+
+    public void CloseWinMenu()
+    {
+        winMenu.SetActive(false);
     }
 
     public void StartGame()
@@ -86,6 +110,12 @@ public class MainMenu : MonoBehaviour
         FindObjectOfType<AudioManager>().ClickAudio();
         yield return new WaitForSecondsRealtime(loadDelay);
         SceneManager.LoadScene(level);
+        optionsMenu.SetActive(false);
+        levelsMenu.SetActive(false);
+        controlsMenu.SetActive(false);
+        realMenu.SetActive(false);
+        FindObjectOfType<GameSession>().mainCanvas.SetActive(true);
+        FindObjectOfType<StopWatch>().StartStopwatch();
     }
 
     public void QuitGame()

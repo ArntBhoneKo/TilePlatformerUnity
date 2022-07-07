@@ -12,6 +12,7 @@ public class GameSession : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI livesText;
     [SerializeField] TextMeshProUGUI scoreText;
+    public GameObject mainCanvas;
     
     void Awake()
     {
@@ -41,7 +42,8 @@ public class GameSession : MonoBehaviour
         }
         else
         {
-            ResetGameSession();
+            FindObjectOfType<StopWatch>().StopStopwatch();
+            FindObjectOfType<MainMenu>().OpenLoseMenu();
         }
     }
 
@@ -57,10 +59,12 @@ public class GameSession : MonoBehaviour
         scoreText.text = coin.ToString();
     }
 
-    void ResetGameSession()
+    public void ResetGameSession()
     {
-        StartCoroutine(ResetLevel());
+        FindObjectOfType<StopWatch>().StopStopwatch();
+        FindObjectOfType<StopWatch>().ResetStopwatch();
         FindObjectOfType<ScenePersist>().ResetScenePersist();
+        StartCoroutine(ResetLevel());
     }
 
     void TakeLife()
@@ -81,7 +85,8 @@ public class GameSession : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(loadDelay);
         SceneManager.LoadScene(0);
-        Destroy(gameObject);
+        FindObjectOfType<MainMenu>().realMenu.SetActive(true);
+        mainCanvas.SetActive(false);
     }
 
 }

@@ -108,12 +108,17 @@ public class PlayerMovement : MonoBehaviour
     {
         if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies", "Hazards")))
         {
-            isAlive = false;
+            StopInput();
             myAnimator.SetTrigger("Dying");
             myRigidbody.velocity = deathKick;
             FindObjectOfType<AudioManager>().PlayerDeathAudio();
             FindObjectOfType<GameSession>().ProcessPlayerDeath();
         }
+    }
+
+    public void StopInput()
+    {
+        isAlive = false;
     }
 
     void OnCollisionEnter2D(Collision2D other) 
