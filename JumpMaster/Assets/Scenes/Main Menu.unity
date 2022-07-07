@@ -6890,7 +6890,7 @@ MonoBehaviour:
   optionsMenu: {fileID: 2045698542}
   realMenu: {fileID: 2143603134}
   levelsMenu: {fileID: 1259164734}
-  controlsMenu: {fileID: 0}
+  controlsMenu: {fileID: 289054715}
   loadDelay: 1
 --- !u!1001 &1681346972
 PrefabInstance:

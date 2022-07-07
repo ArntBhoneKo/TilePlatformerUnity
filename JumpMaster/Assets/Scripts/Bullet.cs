@@ -28,13 +28,13 @@ public class Bullet : MonoBehaviour
         {
             Destroy(other.gameObject);
             FindObjectOfType<AudioManager>().EnemyDeathAudio();
+            FindObjectOfType<GameSession>().AddToCoin(FindObjectOfType<EnemyMovement>().enemyValue);
         }
         Destroy(gameObject);
     }
 
     void OnCollisionEnter2D(Collision2D other) 
     {   
-        FindObjectOfType<GameSession>().AddToCoin(FindObjectOfType<EnemyMovement>().enemyValue);
         Destroy(gameObject);
     }
 }

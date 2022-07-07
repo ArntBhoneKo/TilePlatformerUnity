@@ -51,6 +51,7 @@ MonoBehaviour:
   enemyDeathSFX: {fileID: 8300000, guid: 7667afb1a3c931847af359d5729107c9, type: 3}
   winSFX: {fileID: 8300000, guid: d6b1b207c1a321641bb7856161c3c2e3, type: 3}
   jumpSFX: {fileID: 8300000, guid: 8d674be007eeba9499909c7e01ac8d2e, type: 3}
+  clickSFX: {fileID: 8300000, guid: 11441234fa972e2478f3d82aae9e010b, type: 3}
 --- !u!82 &5243043524158439544
 AudioSource:
   m_ObjectHideFlags: 0
