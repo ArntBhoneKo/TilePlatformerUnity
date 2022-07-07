@@ -11,10 +11,10 @@ public class StopWatch : MonoBehaviour
     bool stopWatchActive = false;
     float currentTime;
     [SerializeField] float levelLoadDelay;
-    public TMP_Text currentTimeText;
-    public TMP_Text finishTimeText;
-    public TMP_Text winLevelText;
-    public TMP_Text loseLevelText;
+    public TextMeshProUGUI currentTimeText;
+    public TextMeshProUGUI finishTimeText;
+    public TextMeshProUGUI winLevelText;
+    public TextMeshProUGUI loseLevelText;
 
     // Start is called before the first frame update
     void Start()
@@ -75,7 +75,9 @@ public class StopWatch : MonoBehaviour
         FindObjectOfType<MainMenu>().CloseWinMenu();
         FindObjectOfType<MainMenu>().CloseLoseMenu();
         FindObjectOfType<AudioManager>().ClickAudio();
-        StartCoroutine(LoadRetryLevel());
+        FindObjectOfType<GameSession>().ResetLife();
+        FindObjectOfType<StopWatch>().StartStopwatch();
+        FindObjectOfType<ScenePersist>().ResetScenePersist();
     }
 
     public void BackToHome()
@@ -104,17 +106,6 @@ public class StopWatch : MonoBehaviour
         
         FindObjectOfType<ScenePersist>().ResetScenePersist();
         SceneManager.LoadScene(nextSceneIndex);
-    }
-
-    IEnumerator LoadRetryLevel()
-    {
-        
-        yield return new WaitForSecondsRealtime(levelLoadDelay);
-
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        FindObjectOfType<StopWatch>().StartStopwatch();
-        FindObjectOfType<ScenePersist>().ResetScenePersist();
-        SceneManager.LoadScene(currentSceneIndex);
     }
     
 }

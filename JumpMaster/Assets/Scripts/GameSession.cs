@@ -44,6 +44,7 @@ public class GameSession : MonoBehaviour
         {
             FindObjectOfType<StopWatch>().StopStopwatch();
             FindObjectOfType<MainMenu>().OpenLoseMenu();
+            FindObjectOfType<StopWatch>().ShowLoseLevelText();
         }
     }
 
@@ -70,6 +71,14 @@ public class GameSession : MonoBehaviour
     void TakeLife()
     {
         playerLives--;
+        StartCoroutine(LoadLevel());
+        livesText.text = playerLives.ToString();
+    }
+
+    public void ResetLife()
+    {
+        playerLives = 3;
+        coin = 0;
         StartCoroutine(LoadLevel());
         livesText.text = playerLives.ToString();
     }
