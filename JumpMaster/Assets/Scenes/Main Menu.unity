@@ -7963,6 +7963,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Quit Button
       objectReference: {fileID: 0}
+    - target: {fileID: 1183380426113669000, guid: 16517b5e052c1e84baf1abe9f6443c43, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1183380426113669006, guid: 16517b5e052c1e84baf1abe9f6443c43, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
