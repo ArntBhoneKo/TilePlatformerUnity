@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
     public GameObject realMenu;
     public GameObject levelsMenu;
     public GameObject controlsMenu;
+    public GameObject credits;
     public GameObject winMenu;
     public GameObject loseMenu;
     [SerializeField] float loadDelay = 1f;
@@ -34,6 +35,7 @@ public class MainMenu : MonoBehaviour
         controlsMenu.SetActive(false);
         winMenu.SetActive(false);
         loseMenu.SetActive(false);
+        credits.SetActive(false);
         realMenu.SetActive(true);
     }
 
@@ -48,6 +50,34 @@ public class MainMenu : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().ClickAudio();
         optionsMenu.SetActive(false);
+        realMenu.SetActive(true);
+    }
+
+    public void OpenControls()
+    {
+        FindObjectOfType<AudioManager>().ClickAudio();
+        realMenu.SetActive(false);
+        controlsMenu.SetActive(true);
+    }
+
+    public void CloseControls()
+    {
+        FindObjectOfType<AudioManager>().ClickAudio();
+        controlsMenu.SetActive(false);
+        realMenu.SetActive(true);
+    }
+
+    public void OpenCredits()
+    {
+        FindObjectOfType<AudioManager>().ClickAudio();
+        realMenu.SetActive(false);
+        credits.SetActive(true);
+    }
+
+    public void CloseCredits()
+    {
+        FindObjectOfType<AudioManager>().ClickAudio();
+        credits.SetActive(false);
         realMenu.SetActive(true);
     }
 

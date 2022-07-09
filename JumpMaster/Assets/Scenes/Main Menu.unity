@@ -5602,10 +5602,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4973803319416242225, guid: 9918a88c77a2fb346be35f6a84788a8c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6154813196982484993, guid: 9918a88c77a2fb346be35f6a84788a8c, type: 3}
       propertyPath: winMenu
       value: 
